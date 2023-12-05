@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="TMDBMovie" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="CQE-t5-FXF" id="Kg0-vt-oq6"/>
+                <outlet property="emptyStateView" destination="p0c-ig-yzg" id="NcK-3J-Mwh"/>
+                <outlet property="searchTextfield" destination="jak-Gm-EEC" id="6rT-dE-BVi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Gm-EEC">
+                    <rect key="frame" x="20" y="79" width="353" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="fvn-ez-Dbn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-t5-FXF">
+                    <rect key="frame" x="20" y="143" width="353" height="675"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NGP-H4-vud">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WFz-sX-yc1"/>
+                        <outlet property="delegate" destination="-1" id="xlj-bU-eM3"/>
+                    </connections>
+                </collectionView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-ig-yzg">
+                    <rect key="frame" x="0.0" y="123" width="393" height="695"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_data" translatesAutoresizingMaskIntoConstraints="NO" id="t1S-Qx-yAJ">
+                            <rect key="frame" x="121.66666666666669" y="178" width="150" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="VBm-Pa-tpQ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0c-S2-cYJ">
+                            <rect key="frame" x="50" y="378" width="293" height="57.333333333333314"/>
+                            <string key="text">Refine Your Search: Try a different keyword or check your spelling.
+</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Q0c-S2-cYJ" firstAttribute="leading" secondItem="p0c-ig-yzg" secondAttribute="leading" constant="50" id="362-S1-vMg"/>
+                        <constraint firstItem="Q0c-S2-cYJ" firstAttribute="top" secondItem="t1S-Qx-yAJ" secondAttribute="bottom" id="Afi-s3-IWn"/>
+                        <constraint firstItem="t1S-Qx-yAJ" firstAttribute="centerX" secondItem="p0c-ig-yzg" secondAttribute="centerX" id="J3Q-kQ-nmO"/>
+                        <constraint firstAttribute="trailing" secondItem="Q0c-S2-cYJ" secondAttribute="trailing" constant="50" id="KAx-uJ-EYN"/>
+                        <constraint firstItem="t1S-Qx-yAJ" firstAttribute="centerY" secondItem="p0c-ig-yzg" secondAttribute="centerY" multiplier="0.8" id="bOk-NN-BSh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CQE-t5-FXF" firstAttribute="top" secondItem="jak-Gm-EEC" secondAttribute="bottom" constant="20" id="46H-an-Au2"/>
+                <constraint firstItem="p0c-ig-yzg" firstAttribute="top" secondItem="jak-Gm-EEC" secondAttribute="bottom" id="77Q-Nh-5vo"/>
+                <constraint firstItem="jak-Gm-EEC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="7OY-9L-pI9"/>
+                <constraint firstItem="CQE-t5-FXF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7nl-Vo-TBf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p0c-ig-yzg" secondAttribute="trailing" id="BWL-92-HOw"/>
+                <constraint firstItem="jak-Gm-EEC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Boi-4r-xjk"/>
+                <constraint firstItem="p0c-ig-yzg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JK8-5U-yg2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CQE-t5-FXF" secondAttribute="trailing" constant="20" id="MD8-Wr-Wo9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="p0c-ig-yzg" secondAttribute="bottom" id="Oi8-Cs-Sbx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jak-Gm-EEC" secondAttribute="trailing" constant="20" id="Ukb-Lm-a08"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CQE-t5-FXF" secondAttribute="bottom" id="amq-1f-guP"/>
+            </constraints>
+            <point key="canvasLocation" x="36" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_empty_data" width="200" height="200"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

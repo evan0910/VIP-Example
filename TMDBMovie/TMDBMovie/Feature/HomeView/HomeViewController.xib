@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TMDBMovie" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonScrollToTop" destination="vEr-82-8g5" id="eYI-E3-FBd"/>
+                <outlet property="collectionView" destination="w1N-of-aJA" id="lpT-fw-J4Q"/>
+                <outlet property="popularMenuButton" destination="cbW-bN-Rz8" id="Anx-Gd-aqi"/>
+                <outlet property="titleMenuButton" destination="pvE-Bj-d86" id="XV9-HV-1LA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="menuGroupButton" destination="2Qd-iD-frX" collectionClass="NSMutableArray" id="twc-Yn-Xxe"/>
+                <outletCollection property="menuGroupButton" destination="I9v-RE-ZxX" collectionClass="NSMutableArray" id="N5t-Mv-Q2b"/>
+                <outletCollection property="menuGroupButton" destination="Hkh-F1-NTo" collectionClass="NSMutableArray" id="Mee-AZ-Rlj"/>
+                <outletCollection property="menuGroupButton" destination="cbW-bN-Rz8" collectionClass="NSMutableArray" id="Aqc-6h-hn0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="w1N-of-aJA">
+                    <rect key="frame" x="10" y="109" width="373" height="709"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TWP-eT-DlR">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ubP-Mh-M6J"/>
+                        <outlet property="delegate" destination="-1" id="9Zk-Ly-QDm"/>
+                    </connections>
+                </collectionView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yyx-Ii-opp">
+                    <rect key="frame" x="0.0" y="51" width="393" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvE-Bj-d86">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CKO-fS-5ur"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Popular" imagePadding="5">
+                                <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small"/>
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didSelectMenu:" destination="-1" eventType="touchUpInside" id="8tZ-of-BKu"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-bN-Rz8">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Jdv-eK-Eik"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Popular" titleAlignment="center">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapPopularMovie:" destination="-1" eventType="touchUpInside" id="g7m-gX-p5k"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-iD-frX">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="oeN-nM-zpn"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Top Rated" titleAlignment="center">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapTopRatedMovie:" destination="-1" eventType="touchUpInside" id="GpT-c9-Oo2"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-RE-ZxX">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Hm1-zR-FGK"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Now Playing" titleAlignment="center">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapNowPlayingMovie:" destination="-1" eventType="touchUpInside" id="yKv-9X-9gc"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-F1-NTo">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="sme-vb-7SH"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Upcoming" titleAlignment="center">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapUpcomingMovie:" destination="-1" eventType="touchUpInside" id="Xym-oc-bhs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEr-82-8g5">
+                    <rect key="frame" x="333" y="758" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Vcr-50-tlv"/>
+                        <constraint firstAttribute="height" constant="40" id="d4d-mR-Kqc"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemGray3Color"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="arrowtriangle.up.fill" catalog="system" symbolScale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapScrollToTop:" destination="-1" eventType="touchUpInside" id="ICd-i5-ijC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="yyx-Ii-opp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7PO-KX-DC8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vEr-82-8g5" secondAttribute="trailing" constant="20" id="B2H-pC-vFs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="w1N-of-aJA" secondAttribute="trailing" constant="10" id="HGl-TH-nxn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vEr-82-8g5" secondAttribute="bottom" constant="20" id="KkK-48-WMa"/>
+                <constraint firstItem="yyx-Ii-opp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-8" id="RW6-ZL-miG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="w1N-of-aJA" secondAttribute="bottom" id="V5v-nF-z6g"/>
+                <constraint firstItem="w1N-of-aJA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ebK-pe-7eX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yyx-Ii-opp" secondAttribute="trailing" id="n5P-yU-fwX"/>
+                <constraint firstItem="w1N-of-aJA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="pp2-1w-yXj"/>
+            </constraints>
+            <point key="canvasLocation" x="137" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowtriangle.up.fill" catalog="system" width="128" height="120"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
